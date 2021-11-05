@@ -1,0 +1,2 @@
+Bounce pads bounce the player away from its surface at 
+a force equal to the force it was hit with.
