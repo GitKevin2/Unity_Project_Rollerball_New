@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df749f72d4a56cb4193e22e2e0af3267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostMultiplier: 50
 --- !u!1 &8390843504702023606
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ GameObject:
   - component: {fileID: 961785878692339939}
   - component: {fileID: 4177701008695834830}
   m_Layer: 0
-  m_Name: LaunchPad
+  m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

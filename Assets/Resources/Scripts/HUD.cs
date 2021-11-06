@@ -36,6 +36,13 @@ public class HUD : MonoBehaviour
         speedBar.MaxSpeed = 50f;
         AddToInfo(Info.LevelComplete, "level_complete.txt");
         AddToInfo(Info.Controls, "discuss_controls.txt");
+        AddToInfo(Info.PauseMenu, "pause_menu.txt");
+        AddToInfo(Info.Collectables, "collectables.txt");
+        AddToInfo(Info.LaunchPad, "launch_pad.txt");
+        AddToInfo(Info.WeakLaunchPad, "weak_launch_pad.txt");
+        AddToInfo(Info.DirectionalPad, "directional_pad.txt");
+        AddToInfo(Info.BouncePad, "bounce_pad.txt");
+
         ShowInfo(Info.Controls);
         timer.Start();
     }
