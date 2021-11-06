@@ -17,7 +17,7 @@ public class HUD : MonoBehaviour
     private AudioSource audioSource;
     private int counter;
     private Vector3 playerVelocity;
-    private Stopwatch timer = new Stopwatch();
+    private Timer timer;
     private int timeTaken = 0;
     private float colorValue = 0f;
 
@@ -30,6 +30,7 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer = levelCompleteBox.GetComponent<Timer>();
         audioSource = GetComponent<AudioSource>();
         Counter = GameManager.totalCollectables;
         SetSpeedValue(0.0f);
@@ -44,7 +45,7 @@ public class HUD : MonoBehaviour
         AddToInfo(Info.BouncePad, "bounce_pad.txt");
 
         ShowInfo(Info.Controls);
-        timer.Start();
+        StartTimer();
     }
 
     void FixedUpdate()
@@ -88,16 +89,15 @@ public class HUD : MonoBehaviour
     public void ShowInfo(Info infoName) => infoBox.QueueInfo(infoName);
 
 
-    public void StartTimer() => timer.Start();
+    public void StartTimer() => timer.Begin();
 
     public void FinishTimer()
     {
         timer.Stop();
-        timeTaken = timer.Elapsed.Seconds;
-        levelCompleteBox.SetTime(timeTaken);
+        levelCompleteBox.SetTime(timer);
         levelCompleteBox.SetCollectables(Counter);
         levelCompleteBox.gameObject.SetActive(true);
-        timer.Reset();
+        timer.ResetTime();
     }
 
     public void PlayAudio()

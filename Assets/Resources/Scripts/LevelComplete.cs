@@ -26,6 +26,11 @@ public class LevelComplete : MonoBehaviour
         timeText.text = $"Time: {minutes}m {remainingSeconds}s";
     }
 
+    public void SetTime(Timer timer)
+    {
+        timeText.text = "Time: " + timer.CurrentTime;
+    }
+
     public void SetCollectables(int counter)
     {
         collectablesText.text = "Collectables: " + counter;

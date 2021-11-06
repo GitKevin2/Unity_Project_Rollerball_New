@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 955468380362012420}
   - component: {fileID: 955468380362012421}
   - component: {fileID: 955468380362012426}
+  - component: {fileID: 9172448365698832028}
   - component: {fileID: 955468380362012422}
   m_Layer: 5
   m_Name: LevelComplete
@@ -372,6 +373,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9172448365698832028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094515913736436553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34f4500f4bddb2409543f848bd36dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 0}
+  playOnAwake: 0
 --- !u!114 &955468380362012422
 MonoBehaviour:
   m_ObjectHideFlags: 0
