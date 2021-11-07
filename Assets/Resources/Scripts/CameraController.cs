@@ -23,7 +23,11 @@ public class CameraController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (GameManager.CurrentCamera == this) GameManager.CurrentCamera = null;
+        if (GameManager.CurrentCamera == this)
+        {
+            GameManager.Save<CameraController>();
+            GameManager.CurrentCamera = null;
+        }
     }
 
     // Start is called before the first frame update

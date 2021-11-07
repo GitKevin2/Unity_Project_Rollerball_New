@@ -45,7 +45,7 @@ public class HUD : MonoBehaviour
         AddToInfo(Info.BouncePad, "bounce_pad.txt");
 
         ShowInfo(Info.Controls);
-        StartTimer();
+        StartTime();
     }
 
     void FixedUpdate()
@@ -63,7 +63,7 @@ public class HUD : MonoBehaviour
     {
         if (GameManager.MainHUD == this)
         {
-            GameManager.totalCollectables = Counter;
+            GameManager.Save<HUD>();
             GameManager.MainHUD = null;
         }
     }
@@ -80,7 +80,7 @@ public class HUD : MonoBehaviour
         if (counter == winThreshold)
         {
             ShowInfo(Info.LevelComplete);
-            FinishTimer();
+            FinishTime();
         }
     }
 
@@ -89,13 +89,14 @@ public class HUD : MonoBehaviour
     public void ShowInfo(Info infoName) => infoBox.QueueInfo(infoName);
 
 
-    public void StartTimer() => timer.Begin();
+    public void StartTime() => timer.Begin();
 
-    public void FinishTimer()
+    public void FinishTime()
     {
-        timer.Stop();
+        timer.End();
         levelCompleteBox.SetTime(timer);
         levelCompleteBox.SetCollectables(Counter);
+        levelCompleteBox.Rate();
         levelCompleteBox.gameObject.SetActive(true);
         timer.ResetTime();
     }

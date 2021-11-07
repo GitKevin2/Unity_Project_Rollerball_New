@@ -5,15 +5,15 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI timeText;
-    [SerializeField] private bool playOnAwake = true;
+    [SerializeField] private bool startOnAwake = true;
     private float seconds;
     private int minutes;
     // Start is called before the first frame update
     void Awake()
     {
-        seconds = 0;
+        seconds = 0f;
         minutes = 0;
-        gameObject.SetActive(playOnAwake);
+        gameObject.SetActive(startOnAwake);
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    public void Stop()
+    public void End()
     {
         gameObject.SetActive(false);
     }

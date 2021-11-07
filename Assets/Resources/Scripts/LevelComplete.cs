@@ -6,24 +6,22 @@ using TMPro;
 public class LevelComplete : MonoBehaviour
 {
     public TextMeshProUGUI timeText, collectablesText;
+    public float goldTime = 60f;
+    public GameObject collectables;
+
+    private int numCollectables;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        numCollectables = collectables.GetComponentsInChildren(typeof(PickUpController)).Length;
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void SetTime(int seconds)
-    {
-        int minutes = seconds / 60;
-        int remainingSeconds = seconds - (minutes * 60);
-        timeText.text = $"Time: {minutes}m {remainingSeconds}s";
     }
 
     public void SetTime(Timer timer)
@@ -34,5 +32,11 @@ public class LevelComplete : MonoBehaviour
     public void SetCollectables(int counter)
     {
         collectablesText.text = "Collectables: " + counter;
-    } 
+    }
+    
+    
+    public void Rate()
+    {
+
+    }
 }
