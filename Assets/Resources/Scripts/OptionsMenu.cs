@@ -20,7 +20,7 @@ public class OptionsMenu : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main.GetComponent<CameraController>();
-        slider.value = mainCamera.lookSensitivity;
+        slider.value = mainCamera.LookSensitivity;
         SetValueText(slider.value);
         initialValue = slider.value;
     }
@@ -34,7 +34,7 @@ public class OptionsMenu : MonoBehaviour
     public void SetValueText(float value)
     {
         valueText.text = value.ToString();
-        if (mainCamera != null) mainCamera.lookSensitivity = value;
+        if (mainCamera != null) mainCamera.LookSensitivity = value;
         
     }
 

@@ -89,4 +89,6 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public float LookSensitivity { get => lookSensitivity; set => lookSensitivity = value; }
+
 }

@@ -8,14 +8,17 @@ public class LevelComplete : MonoBehaviour
     public TextMeshProUGUI timeText, collectablesText;
     public float goldTime = 60f;
     public GameObject collectables;
+    public GameObject stars;
 
     private int numCollectables;
+    private int starsEarned = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         numCollectables = collectables.GetComponentsInChildren(typeof(PickUpController)).Length;
         gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -27,16 +30,29 @@ public class LevelComplete : MonoBehaviour
     public void SetTime(Timer timer)
     {
         timeText.text = "Time: " + timer.CurrentTime;
+
+        if (timer.Seconds <= goldTime)
+        {
+            starsEarned++;
+        }
     }
 
     public void SetCollectables(int counter)
     {
         collectablesText.text = "Collectables: " + counter;
+        if (counter - GameManager.totalCollectables == numCollectables)
+        {
+            starsEarned++;
+        }
     }
     
     
     public void Rate()
     {
-
+        Transform trStars = stars.transform;
+        for (int i = 0; i < starsEarned; i++)
+        {
+            trStars.GetChild(i).gameObject.SetActive(true);
+        }
     }
 }

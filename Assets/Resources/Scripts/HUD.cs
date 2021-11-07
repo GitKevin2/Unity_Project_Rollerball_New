@@ -11,7 +11,6 @@ public class HUD : MonoBehaviour
     public LevelComplete levelCompleteBox;
     public SpeedBar speedBar;
     public InfoController infoBox;
-    public int winThreshold = 1;
     public Gradient collectableHighlighter;
 
     private AudioSource audioSource;
@@ -30,7 +29,7 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = levelCompleteBox.GetComponent<Timer>();
+        timer = GetComponent<Timer>();
         audioSource = GetComponent<AudioSource>();
         Counter = GameManager.totalCollectables;
         SetSpeedValue(0.0f);
@@ -45,7 +44,6 @@ public class HUD : MonoBehaviour
         AddToInfo(Info.BouncePad, "bounce_pad.txt");
 
         ShowInfo(Info.Controls);
-        StartTime();
     }
 
     void FixedUpdate()
@@ -75,13 +73,10 @@ public class HUD : MonoBehaviour
 
     public void SetSpeedValue() => SetSpeedValue(new Vector2(playerVelocity.x, playerVelocity.z).magnitude);
 
-    public void CheckWinCond()
+    public void WinCond()
     {
-        if (counter == winThreshold)
-        {
-            ShowInfo(Info.LevelComplete);
-            FinishTime();
-        }
+        ShowInfo(Info.LevelComplete);
+        FinishTime();
     }
 
     public void AddToInfo(Info infoName, string filename) => infoBox.AddToInfo(infoName, Application.dataPath + "/Resources/_Misc/InfoFiles/" + filename);
@@ -105,6 +100,11 @@ public class HUD : MonoBehaviour
     {
         audioSource.Play();
         
+    }
+
+    public void PlayAudio(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
     public void HighlightCounter() => colorValue = 1f;

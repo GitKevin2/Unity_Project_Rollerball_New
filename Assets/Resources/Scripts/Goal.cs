@@ -17,6 +17,7 @@ public class Goal : MonoBehaviour
     {
         if (other.CompareTag(Tags.PLAYER))
         {
+            GameManager.MainHUD.WinCond();
             if (isPlaceholder)
             {
                 Debug.Log("Goal reached.");

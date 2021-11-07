@@ -25,6 +25,7 @@ public class InfoController : MonoBehaviour
 
     public void SetInfo(Info infoName)
     {
+        GameManager.MainHUD.PlayAudio(AudioStore.INFO_POPUP);
         if (information.ContainsKey(infoName))
             infoText.text = information[infoName];
         else

@@ -3957,6 +3957,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2345971261315870335, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345971261315870335, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4210297319675449951, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4166,6 +4176,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614578422483546606, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956913837159370611, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956913837159370611, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956913837159370611, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956913837159370611, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956913837159370611, guid: bbc64e9ef239b2f48a13d24c5ed51d80,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbc64e9ef239b2f48a13d24c5ed51d80, type: 3}
@@ -4727,6 +4767,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ca1c0fc67fdf91849908832091a5e43d, type: 2}
+    - target: {fileID: 6140275903854786579, guid: 75b864e012d4f044e8674caaaf3aa22f,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8195011144091768065, guid: 75b864e012d4f044e8674caaaf3aa22f,
         type: 3}
       propertyPath: m_RootOrder

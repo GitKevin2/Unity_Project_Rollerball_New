@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class GameManager
 {
-    public static bool firstAccess;
+    public static bool firstAccess = true;
     public static int totalCollectables = 0;
     public static CameraController _currentCamera;
     
@@ -20,7 +20,7 @@ public static class GameManager
         set
         {
             _currentCamera = value;
-            if (!firstAccess) value.lookSensitivity = Options.LookSensitivty;
+            if (!firstAccess && _currentCamera != null) value.LookSensitivity = Options.LookSensitivty;
             else firstAccess = false;
         }
     }
@@ -47,7 +47,7 @@ public static class GameManager
         Type type = typeof(T);
         if (type == typeof(CameraController))
         {
-            Options.LookSensitivty = CurrentCamera.lookSensitivity;
+            Options.LookSensitivty = CurrentCamera.LookSensitivity;
         }
         else if (type == typeof(HUD))
         {
@@ -69,7 +69,7 @@ public static class GameManager
 
 public static class AudioStore
 {
-    public static readonly AudioClip EXPLOSION, COLLECTABLE, INTRO_MAIN, INTRO_END;
+    public static readonly AudioClip EXPLOSION, COLLECTABLE, INTRO_MAIN, INTRO_END, INFO_POPUP;
 
     static AudioStore()
     {
@@ -78,6 +78,7 @@ public static class AudioStore
         COLLECTABLE = Resources.Load<AudioClip>(directory + "Collectable_pickup_1");
         INTRO_MAIN = Resources.Load<AudioClip>(directory + "Intro_Dialogue_reverb_v2_trim-end");
         INTRO_END = Resources.Load<AudioClip>(directory + "Intro_Trim-end-sample_reverb");
+        INFO_POPUP = Resources.Load<AudioClip>(directory + "Info_ui_sound");
 
     }
 }
