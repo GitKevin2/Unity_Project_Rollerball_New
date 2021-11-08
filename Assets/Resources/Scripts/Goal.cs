@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
     public bool isPlaceholder = true;
+    public bool isLevel = true;
+    public float delay = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,19 +19,31 @@ public class Goal : MonoBehaviour
     {
         if (other.CompareTag(Tags.PLAYER))
         {
-            GameManager.MainHUD.WinCond();
             if (isPlaceholder)
             {
                 Debug.Log("Goal reached.");
                 return;
             }
+            if (isLevel)
+            {
+                GameManager.MainHUD.WinCond();
+
+            }
             // Loads the next scene according to the order of the build.
-            ToNextLevel();
+            NextLevel();
         }
     }
-
-    private void ToNextLevel()
+    
+    public void NextLevel()
     {
+        StartCoroutine(ToNextLevel());
+    }
+
+    private IEnumerator ToNextLevel()
+    {
+        //SceneManager.LoadScene("LoadingScreen");
+        yield return new WaitForSeconds(delay);
+        Debug.Log("new scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

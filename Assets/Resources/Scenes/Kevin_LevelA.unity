@@ -2181,6 +2181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaceholder: 0
+  isLevel: 1
+  delay: 0
 --- !u!136 &514841443
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4752,6 +4754,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBase
       objectReference: {fileID: 0}
+    - target: {fileID: 2844830816486910700, guid: 75b864e012d4f044e8674caaaf3aa22f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3314141453692378803, guid: 75b864e012d4f044e8674caaaf3aa22f,
         type: 3}
       propertyPath: northBoundary
@@ -4785,7 +4792,7 @@ PrefabInstance:
     - target: {fileID: 8195011144091768065, guid: 75b864e012d4f044e8674caaaf3aa22f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8195011144091768065, guid: 75b864e012d4f044e8674caaaf3aa22f,
         type: 3}

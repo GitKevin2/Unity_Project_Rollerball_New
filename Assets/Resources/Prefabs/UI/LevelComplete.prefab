@@ -579,7 +579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &955468380362012423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -679,4 +679,4 @@ MonoBehaviour:
   collectablesText: {fileID: 955468379990706816}
   goldTime: 60
   collectables: {fileID: 0}
-  stars: {fileID: 4355301075970166425}
+  stars: {fileID: 1520377362727446272}

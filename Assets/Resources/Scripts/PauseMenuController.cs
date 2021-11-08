@@ -20,6 +20,14 @@ public class PauseMenuController : MonoBehaviour
     {
     }
 
+    private void Update()
+    {
+        if (UnityEngine.InputSystem.Keyboard.current.enterKey.isPressed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
     private void OnApplicationPause(bool pause)
     {
         Debug.Log("Pause");

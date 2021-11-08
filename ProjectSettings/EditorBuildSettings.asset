@@ -6,9 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Resources/Scenes/MainMenu.unity
+    guid: 0511b6e5ba153a447a0431a2b211e200
+  - enabled: 1
+    path: Assets/Resources/Scenes/Intro.unity
+    guid: 51b0927fff814a24dad5defa80ef05c1
+  - enabled: 1
+    path: Assets/Resources/Scenes/L1.unity
+    guid: fba8f382ccc37284ebf94fa41e18a3a3
+  - enabled: 1
+    path: Assets/Resources/Scenes/L2.unity
+    guid: f257c3fe52c95374982b5b25949cbf3d
+  - enabled: 1
     path: Assets/Resources/Scenes/Kevin_LevelA.unity
     guid: c540c4ad30ad8994da2a1d2a2d172a38
   - enabled: 1
     path: Assets/Resources/Scenes/Kevin_LevelB.unity
     guid: d459d1e5c17ac704f8a0170522ce3495
+  - enabled: 1
+    path: Assets/Resources/Scenes/LVL5.unity
+    guid: 8ec56221494929a45abf1672b5ceb717
+  - enabled: 1
+    path: Assets/Resources/Scenes/BossLevel.unity
+    guid: e03b4adcc23c80b40b410407c8c42003
+  - enabled: 1
+    path: Assets/Resources/Scenes/EndGame.unity
+    guid: d62dd0fb7d964b9459a1db0540af273e
+  - enabled: 1
+    path: Assets/Resources/Import/loadingBar/Scenes/LoadingScreen.unity
+    guid: afab9a08f1c5c9f4484671065d17d611
   m_configObjects: {}

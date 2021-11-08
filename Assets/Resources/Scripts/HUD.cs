@@ -2,6 +2,7 @@ using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.Diagnostics;
 
@@ -43,7 +44,7 @@ public class HUD : MonoBehaviour
         AddToInfo(Info.DirectionalPad, "directional_pad.txt");
         AddToInfo(Info.BouncePad, "bounce_pad.txt");
 
-        ShowInfo(Info.Controls);
+        if (SceneManager.GetActiveScene().name == "L1") ShowInfo(Info.Controls);
     }
 
     void FixedUpdate()

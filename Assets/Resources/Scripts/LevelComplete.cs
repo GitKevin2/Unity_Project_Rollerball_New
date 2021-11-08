@@ -8,7 +8,7 @@ public class LevelComplete : MonoBehaviour
     public TextMeshProUGUI timeText, collectablesText;
     public float goldTime = 60f;
     public GameObject collectables;
-    public GameObject stars;
+    public Transform stars;
 
     private int numCollectables;
     private int starsEarned = 1;
@@ -49,10 +49,9 @@ public class LevelComplete : MonoBehaviour
     
     public void Rate()
     {
-        Transform trStars = stars.transform;
         for (int i = 0; i < starsEarned; i++)
         {
-            trStars.GetChild(i).gameObject.SetActive(true);
+            stars.GetChild(i).gameObject.SetActive(true);
         }
     }
 }
