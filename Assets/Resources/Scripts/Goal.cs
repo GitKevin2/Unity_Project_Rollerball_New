@@ -19,6 +19,7 @@ public class Goal : MonoBehaviour
     {
         if (other.CompareTag(Tags.PLAYER))
         {
+            GameManager.Paused = true;
             if (isPlaceholder)
             {
                 Debug.Log("Goal reached.");

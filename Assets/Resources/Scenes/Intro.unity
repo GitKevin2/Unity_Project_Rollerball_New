@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92d3ce5391bcb1428f84a67e80a22a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaceholder: 0
+  isPlaceholder: 1
   isLevel: 0
   delay: 2
 --- !u!135 &1545995574

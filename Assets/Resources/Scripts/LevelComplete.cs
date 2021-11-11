@@ -17,7 +17,6 @@ public class LevelComplete : MonoBehaviour
     void Start()
     {
         numCollectables = collectables.GetComponentsInChildren(typeof(PickUpController)).Length;
-        gameObject.SetActive(false);
 
     }
 

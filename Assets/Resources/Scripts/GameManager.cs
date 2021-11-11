@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
     public static bool firstAccess = true;
     public static int totalCollectables = 0;
-    public static CameraController _currentCamera;
+    private static CameraController _currentCamera;
+    private static List<LevelResult> starsPerLevel = new List<LevelResult>(6);
     
     public static HUD MainHUD { get; set; }
 
@@ -59,6 +61,27 @@ public static class GameManager
         }
         else throw new InvalidOperationException();
     }
+
+    public static void AddLevelResult(int numStars)
+    {
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+        starsPerLevel.Add(new LevelResult(buildIndex, numStars));
+    }
+
+    public static List<LevelResult> StarsPerLevel => starsPerLevel;
+
+    public class LevelResult
+    {
+        public int BuildIndex { get; private set; }
+        public int CountStars { get; set; }
+
+        public LevelResult(int buildIndex, int numStars)
+        {
+            BuildIndex = buildIndex;
+            CountStars = numStars;
+        }
+    }
+
 
     public static class Options
     {

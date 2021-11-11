@@ -43,6 +43,8 @@ public class HUD : MonoBehaviour
         AddToInfo(Info.WeakLaunchPad, "weak_launch_pad.txt");
         AddToInfo(Info.DirectionalPad, "directional_pad.txt");
         AddToInfo(Info.BouncePad, "bounce_pad.txt");
+        AddToInfo(Info.DeathBlock, "death_block.txt");
+        AddToInfo(Info.DeathPit, "death_pit.txt");
 
         if (SceneManager.GetActiveScene().name == "L1") ShowInfo(Info.Controls);
     }
