@@ -1,1 +1,4 @@
-Directional pads directs and boost the player along the direction it points in.
+Directional pads boost the player along the direction
+of the arrow. If the player goes against the 
+direction, it instead redirects the player at a base
+speed.
