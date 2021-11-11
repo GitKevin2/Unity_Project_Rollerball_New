@@ -74,5 +74,7 @@ public enum Info
     LaunchPad,
     WeakLaunchPad,
     DirectionalPad,
-    BouncePad
+    BouncePad,
+    DeathPit,
+    DeathBlock
 };
