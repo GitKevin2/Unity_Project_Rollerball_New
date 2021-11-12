@@ -19,6 +19,7 @@ public class End : MonoBehaviour
         int totalStars = 0;
         for (int i = 0; i < starsPerLevel.Count; i++)
         {
+            //Fetch star images which is the second child object of the current level object.
             Transform stars = levels.GetChild(i).GetChild(1);
             for (int j = 0; j < starsPerLevel[i].CountStars; j++)
             {
