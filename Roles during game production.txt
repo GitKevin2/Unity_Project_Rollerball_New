@@ -1,0 +1,21 @@
+Project Leader/Game Director 
+- Kevin Jong
+Game Programmer 
+- Kevin Jong
+UI Designer 
+- Aravind VS (Main Menu, About)
+- Vishnu Gorasia (Loading Screen)
+- Kevin Jong (HUD, Pause Menu, Level Complete Screen, EndGame Scene)
+Level Designer 
+- Vishnu Gorasia (Level 1 & 2)
+- Kevin Jong (Level 3 & 4)
+- Aravind VS (Level 5 & Ultimate/Boss Level)
+Sound FX designer
+- Kevin Jong
+	Voice
+	- Kevin Jong
+Asset Manager (including any sound assets)
+- Aravind VS
+- Vishnu Gorasia
+- Kevin Jong
+
