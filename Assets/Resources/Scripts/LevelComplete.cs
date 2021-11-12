@@ -14,10 +14,11 @@ public class LevelComplete : MonoBehaviour
     private int starsEarned = 1;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        numCollectables = collectables.GetComponentsInChildren(typeof(PickUpController)).Length;
+        numCollectables = collectables.transform.GetComponentsInChildren(typeof(PickUpController), true).Length;
 
+        Debug.Log(numCollectables != 0);
     }
 
     // Update is called once per frame
@@ -38,7 +39,9 @@ public class LevelComplete : MonoBehaviour
 
     public void SetCollectables(int counter)
     {
-        collectablesText.text = "Collectables: " + counter;
+        Debug.Log("Test: " + numCollectables);
+        collectablesText.text = "Collectables: " + (counter - GameManager.totalCollectables);
+        Debug.Log((counter - GameManager.totalCollectables) + " : " + numCollectables);
         if (counter - GameManager.totalCollectables == numCollectables)
         {
             starsEarned++;
@@ -52,5 +55,6 @@ public class LevelComplete : MonoBehaviour
         {
             stars.GetChild(i).gameObject.SetActive(true);
         }
+        GameManager.AddLevelResult(starsEarned);
     }
 }

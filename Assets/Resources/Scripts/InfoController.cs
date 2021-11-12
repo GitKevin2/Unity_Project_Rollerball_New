@@ -51,7 +51,7 @@ public class InfoController : MonoBehaviour
     {
         if (infoQueue.Count == 0) return;
         gameObject.SetActive(true);
-        StartCoroutine(ShowInfoCoroutine(infoQueue.Dequeue()));
+        StartCoroutine(ShowInfoCoroutine(infoQueue.Peek()));
     }
 
     private IEnumerator ShowInfoCoroutine(Info infoName)
@@ -59,6 +59,7 @@ public class InfoController : MonoBehaviour
         SetInfo(infoName);
         yield return new WaitForSeconds(5f);
         gameObject.SetActive(false);
+        infoQueue.Dequeue();
         RunQueue();
     }
 }

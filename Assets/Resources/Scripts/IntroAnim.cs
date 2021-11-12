@@ -12,6 +12,7 @@ public class IntroAnim : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        audioSource.ignoreListenerPause = true;
 
     }
 

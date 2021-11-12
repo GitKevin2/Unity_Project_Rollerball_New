@@ -92,13 +92,13 @@ public class HUD : MonoBehaviour
     public void FinishTime()
     {
         timer.End();
+        levelCompleteBox.gameObject.SetActive(true);
         levelCompleteBox.SetTime(timer);
         levelCompleteBox.SetCollectables(Counter);
         levelCompleteBox.Rate();
-        levelCompleteBox.gameObject.SetActive(true);
         timer.ResetTime();
     }
-
+    
     public void PlayAudio()
     {
         audioSource.Play();

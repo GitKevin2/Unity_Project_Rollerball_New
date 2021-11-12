@@ -3673,7 +3673,7 @@ PrefabInstance:
     - target: {fileID: 955468380362012422, guid: ec15932f648219f4e97a0c25bbe210ec,
         type: 3}
       propertyPath: goldTime
-      value: 10
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 955468380362012422, guid: ec15932f648219f4e97a0c25bbe210ec,
         type: 3}

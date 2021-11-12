@@ -10,10 +10,14 @@ public class End : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         List<GameManager.LevelResult> starsPerLevel = GameManager.StarsPerLevel;
-        if (starsPerLevel.Count == 0) return;
+        if (starsPerLevel.Count == 0)
+        {
+            return;
+        }
         int totalStars = 0;
-        for (int i = 0; i < levels.childCount; i++)
+        for (int i = 0; i < starsPerLevel.Count; i++)
         {
             Transform stars = levels.GetChild(i).GetChild(1);
             for (int j = 0; j < starsPerLevel[i].CountStars; j++)
@@ -23,7 +27,7 @@ public class End : MonoBehaviour
             }
         }
 
-        int finalCount = totalStars / (3 * starsPerLevel.Count);
+        int finalCount = totalStars / starsPerLevel.Count;
         for (int i = 0; i < finalCount; i++)
         {
             finalStars.GetChild(i).gameObject.SetActive(true);

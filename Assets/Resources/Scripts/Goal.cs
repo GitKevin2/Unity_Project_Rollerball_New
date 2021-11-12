@@ -19,7 +19,7 @@ public class Goal : MonoBehaviour
     {
         if (other.CompareTag(Tags.PLAYER))
         {
-            GameManager.Paused = true;
+            //GameManager.Paused = true;
             if (isPlaceholder)
             {
                 Debug.Log("Goal reached.");
@@ -43,7 +43,7 @@ public class Goal : MonoBehaviour
     private IEnumerator ToNextLevel()
     {
         //SceneManager.LoadScene("LoadingScreen");
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         Debug.Log("new scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
