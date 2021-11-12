@@ -3,9 +3,9 @@ Project Leader/Game Director
 Game Programmer 
 - Kevin Jong
 UI Designer 
-- Aravind VS (Main Menu, About)
-- Vishnu Gorasia (Loading Screen)
-- Kevin Jong (HUD, Pause Menu, Level Complete Screen, EndGame Scene)
+- Aravind VS 
+- Vishnu Gorasia 
+- Kevin Jong 
 Level Designer 
 - Vishnu Gorasia (Level 1 & 2)
 - Kevin Jong (Level 3 & 4)
