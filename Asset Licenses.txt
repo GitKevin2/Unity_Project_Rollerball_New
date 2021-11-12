@@ -1,3 +1,10 @@
 Asset Licenses
 CC BY 3.0
 https://opengameart.org/content/so-long
+
+Unity Asset Store EULA 
+Straight Ramps and structures -  https://assetstore.unity.com/packages/3d/prototyping-pack-free-94277
+Unity Particles Pack https://assetstore.unity.com/packages/essentials/tutorial-projects/unity-particle-pack-127325
+
+Kevin: I would add more but that's not with me.
+This'd be in the credits scene if we had one.
