@@ -11,6 +11,7 @@ public class End : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        // Fetch stars earned per level and total them up.
         List<GameManager.LevelResult> starsPerLevel = GameManager.StarsPerLevel;
         if (starsPerLevel.Count == 0)
         {
@@ -21,6 +22,7 @@ public class End : MonoBehaviour
         {
             //Fetch star images which is the second child object of the current level object.
             Transform stars = levels.GetChild(i).GetChild(1);
+            //Iterate an enable each star equal to amount of stars earned.
             for (int j = 0; j < starsPerLevel[i].CountStars; j++)
             {
                 stars.GetChild(j).gameObject.SetActive(true);
@@ -28,6 +30,7 @@ public class End : MonoBehaviour
             }
         }
 
+        // calculate final number of stars.
         int finalCount = totalStars / starsPerLevel.Count;
         for (int i = 0; i < finalCount; i++)
         {

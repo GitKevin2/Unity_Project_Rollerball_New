@@ -20,6 +20,7 @@ public class IntroAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Animation is played before entire voiceover is finished.
         if (audioSource.clip == AudioStore.INTRO_MAIN && !audioSource.isPlaying)
         {
             audioSource.clip = AudioStore.INTRO_END;
@@ -29,6 +30,7 @@ public class IntroAnim : MonoBehaviour
             Debug.Log("Played");
         }
 
+        // Use the ENTER key to skip the Intro cutscene.
         if (UnityEngine.InputSystem.Keyboard.current.enterKey.isPressed)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
