@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         GameManager.Paused = false;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void ToIntro()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Intro");
     }
 
     public void ToAbout()
@@ -29,6 +30,6 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
+        Application.Quit(0);
     }
 }

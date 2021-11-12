@@ -5871,6 +5871,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 955468380362012422, guid: ec15932f648219f4e97a0c25bbe210ec,
         type: 3}
+      propertyPath: goldTime
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 955468380362012422, guid: ec15932f648219f4e97a0c25bbe210ec,
+        type: 3}
       propertyPath: collectables
       value: 
       objectReference: {fileID: 90383801}

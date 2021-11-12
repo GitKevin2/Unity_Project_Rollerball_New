@@ -11,7 +11,23 @@ public static class GameManager
     public static int totalCollectables = 0;
     private static CameraController _currentCamera;
     private static List<LevelResult> starsPerLevel = new List<LevelResult>(6);
-    
+    private static readonly Dictionary<Info, string> information = new Dictionary<Info, string>();
+
+    static GameManager()
+    {
+        AddToInfo(Info.LevelComplete, InfoFiles.LEVEL_COMPLETE);
+        AddToInfo(Info.Controls, InfoFiles.DISCUSS_CONTROLS);
+        AddToInfo(Info.PauseMenu, InfoFiles.PAUSE_MENU);
+        AddToInfo(Info.Collectables, InfoFiles.COLLECTABLES);
+        AddToInfo(Info.LaunchPad, InfoFiles.LAUNCH_PAD);
+        AddToInfo(Info.WeakLaunchPad, InfoFiles.WEAK_LAUNCH_PAD);
+        AddToInfo(Info.DirectionalPad, InfoFiles.DIRECTIONAL_PAD);
+        AddToInfo(Info.BouncePad, InfoFiles.BOUNCE_PAD);
+        AddToInfo(Info.DeathBlock, InfoFiles.DEATH_BLOCK);
+        AddToInfo(Info.DeathPit, InfoFiles.DEATH_PIT);
+        AddToInfo(Info.HUD, InfoFiles.HUD);
+    }
+
     public static HUD MainHUD { get; set; }
 
     public static PauseMenuController PauseMenu { get; set; }
@@ -62,6 +78,16 @@ public static class GameManager
         else throw new InvalidOperationException();
     }
 
+    public static void AddToInfo(Info infoName, TextAsset textAsset)
+    {
+        InfoFiles.added = true;
+        var newInfo = textAsset.text;
+        if (information.ContainsKey(infoName))
+            information[infoName] = newInfo;
+        else
+            information.Add(infoName, newInfo);
+    }
+
     public static void AddLevelResult(int numStars)
     {
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
@@ -70,6 +96,7 @@ public static class GameManager
 
     public static List<LevelResult> StarsPerLevel => starsPerLevel;
 
+    public static Dictionary<Info, string> InformationList => information;
     public class LevelResult
     {
         public int BuildIndex { get; private set; }
@@ -92,6 +119,7 @@ public static class GameManager
 
 public static class AudioStore
 {
+
     public static readonly AudioClip EXPLOSION, COLLECTABLE, INTRO_MAIN, INTRO_END, INFO_POPUP;
 
     static AudioStore()
@@ -103,5 +131,28 @@ public static class AudioStore
         INTRO_END = Resources.Load<AudioClip>(directory + "Intro_Trim-end-sample_reverb");
         INFO_POPUP = Resources.Load<AudioClip>(directory + "Info_ui_sound");
 
+    }
+}
+
+public static class InfoFiles
+{
+    public static bool added = false;
+    public static readonly TextAsset LEVEL_COMPLETE, DISCUSS_CONTROLS, PAUSE_MENU, COLLECTABLES, 
+        LAUNCH_PAD, WEAK_LAUNCH_PAD, DIRECTIONAL_PAD, BOUNCE_PAD, DEATH_PIT, DEATH_BLOCK, HUD;
+
+    static InfoFiles()
+    {
+        string directory = "_Misc/Infofiles/";
+        LEVEL_COMPLETE = Resources.Load<TextAsset>(directory + "level_complete");
+        DISCUSS_CONTROLS = Resources.Load<TextAsset>(directory + "discuss_controls");
+        PAUSE_MENU = Resources.Load<TextAsset>(directory + "pause_menu");
+        COLLECTABLES = Resources.Load<TextAsset>(directory + "collectables");
+        LAUNCH_PAD = Resources.Load<TextAsset>(directory + "launch_pad");
+        WEAK_LAUNCH_PAD = Resources.Load<TextAsset>(directory + "weak_launch_pad");
+        DIRECTIONAL_PAD = Resources.Load<TextAsset>(directory + "directional_pad");
+        BOUNCE_PAD = Resources.Load<TextAsset>(directory + "bounce_pad");
+        DEATH_PIT = Resources.Load<TextAsset>(directory + "death_pit");
+        DEATH_BLOCK = Resources.Load<TextAsset>(directory + "death_block");
+        HUD = Resources.Load<TextAsset>(directory + "hud");
     }
 }

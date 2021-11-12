@@ -8,11 +8,12 @@ public class InfoController : MonoBehaviour
 {
     public TextMeshProUGUI infoText;
 
-    private readonly Dictionary<Info, string> information = new Dictionary<Info, string>();
+    private Dictionary<Info, string> information;
     private readonly Queue<Info> infoQueue = new Queue<Info>();
 
-    void Start()
+    void Awake()
     {
+        information = GameManager.InformationList;
         infoText.text = string.Empty;
         gameObject.SetActive(false);
     }
@@ -30,15 +31,6 @@ public class InfoController : MonoBehaviour
             infoText.text = information[infoName];
         else
             Debug.LogWarning("\"" + infoName + "\" does not exist.");
-    }
-
-    public void AddToInfo(Info infoName, string path)
-    {
-        string newInfo = File.ReadAllText(path);
-        if (information.ContainsKey(infoName))
-            information[infoName] = newInfo;
-        else
-            information.Add(infoName, newInfo);
     }
 
     public void QueueInfo(Info infoName)
@@ -77,5 +69,6 @@ public enum Info
     DirectionalPad,
     BouncePad,
     DeathPit,
-    DeathBlock
+    DeathBlock,
+    HUD
 };

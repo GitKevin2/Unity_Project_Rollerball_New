@@ -1,1 +1,1 @@
-Beware of the blue ground, touching it means instant death.
+Beware of the glowing ground, touching it means instant death.

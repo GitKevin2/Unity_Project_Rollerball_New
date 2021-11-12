@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
         seconds = 0; minutes = 0;
     }
 
-    public string CurrentTime
+    public string Display
     {
         get => minutes + "m " + (int)(seconds - (minutes * 60)) + "s";
     }

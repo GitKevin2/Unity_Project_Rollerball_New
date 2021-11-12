@@ -1,2 +1,1 @@
-Data points are scattered across the levels. Collect 
-them for a higher score.
+The cubes are data points. Data points are scattered across the levels. Collect them for a higher score. The total is shown on the top-center of the screen.

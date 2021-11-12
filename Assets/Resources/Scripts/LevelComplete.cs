@@ -29,7 +29,7 @@ public class LevelComplete : MonoBehaviour
 
     public void SetTime(Timer timer)
     {
-        timeText.text = "Time: " + timer.CurrentTime;
+        timeText.text = "Time: " + timer.Display;
 
         if (timer.Seconds <= goldTime)
         {

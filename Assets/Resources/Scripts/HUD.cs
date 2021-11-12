@@ -35,16 +35,7 @@ public class HUD : MonoBehaviour
         Counter = GameManager.totalCollectables;
         SetSpeedValue(0.0f);
         speedBar.MaxSpeed = 50f;
-        AddToInfo(Info.LevelComplete, "level_complete.txt");
-        AddToInfo(Info.Controls, "discuss_controls.txt");
-        AddToInfo(Info.PauseMenu, "pause_menu.txt");
-        AddToInfo(Info.Collectables, "collectables.txt");
-        AddToInfo(Info.LaunchPad, "launch_pad.txt");
-        AddToInfo(Info.WeakLaunchPad, "weak_launch_pad.txt");
-        AddToInfo(Info.DirectionalPad, "directional_pad.txt");
-        AddToInfo(Info.BouncePad, "bounce_pad.txt");
-        AddToInfo(Info.DeathBlock, "death_block.txt");
-        AddToInfo(Info.DeathPit, "death_pit.txt");
+
 
         if (SceneManager.GetActiveScene().name == "L1") ShowInfo(Info.Controls);
     }
@@ -81,8 +72,6 @@ public class HUD : MonoBehaviour
         ShowInfo(Info.LevelComplete);
         FinishTime();
     }
-
-    public void AddToInfo(Info infoName, string filename) => infoBox.AddToInfo(infoName, Application.dataPath + "/Resources/_Misc/InfoFiles/" + filename);
 
     public void ShowInfo(Info infoName) => infoBox.QueueInfo(infoName);
 

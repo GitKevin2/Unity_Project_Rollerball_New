@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroAnim : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class IntroAnim : MonoBehaviour
             animator.enabled = true;
             animator.Play("intro_animation");
             Debug.Log("Played");
+        }
+
+        if (UnityEngine.InputSystem.Keyboard.current.enterKey.isPressed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
