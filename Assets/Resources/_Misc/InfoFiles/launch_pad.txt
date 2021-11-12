@@ -1,1 +1,1 @@
-Launch pads will send the player upwards in addition to the velocity they initially had.
+Some launch pads have a particularly strong boost.
