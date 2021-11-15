@@ -37,10 +37,4 @@ public class End : MonoBehaviour
             finalStars.GetChild(i).gameObject.SetActive(true);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -60,6 +60,40 @@ public static class GameManager
         }
     }
 
+    public static void Set<T>(T value)
+    {
+        if (value is HUD hud)
+        {
+            MainHUD = hud;
+        }
+        else if (value is CameraController cam)
+        {
+            CurrentCamera = cam;
+        }
+        else if (value is PauseMenuController pauseMenu)
+        {
+            PauseMenu = pauseMenu;
+        }
+        else throw new InvalidOperationException();
+    }
+
+    public static T Get<T>()
+    {
+        if (MainHUD is T hud)
+        {
+            return hud;
+        }
+        else if (CurrentCamera is T camera)
+        {
+            return camera;
+        }
+        else if (PauseMenu is T pauseMenu)
+        {
+            return pauseMenu;
+        }
+        else throw new InvalidOperationException();
+    }
+
     public static void Save<T>()
     {
         Type type = typeof(T);
