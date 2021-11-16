@@ -22,7 +22,7 @@ public class End : MonoBehaviour
         {
             //Fetch star images which is the second child object of the current level object.
             Transform stars = levels.GetChild(i).GetChild(1);
-            //Iterate an enable each star equal to amount of stars earned.
+            //Iterate and enable each star equal to amount of stars earned.
             for (int j = 0; j < starsPerLevel[i].CountStars; j++)
             {
                 stars.GetChild(j).gameObject.SetActive(true);

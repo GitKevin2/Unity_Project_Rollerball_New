@@ -60,7 +60,7 @@ public static class GameManager
         }
     }
 
-    public static T Get<T>()
+    public static T Get<T>() where T : class
     {
         if (MainHUD is T hud)
         {
@@ -74,7 +74,7 @@ public static class GameManager
         {
             return pauseMenu;
         }
-        else throw new InvalidOperationException();
+        else return null;
     }
 
     public static void Save<T>()
